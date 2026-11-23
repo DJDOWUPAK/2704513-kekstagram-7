@@ -73,7 +73,7 @@ const createComment = function () {
 
   // С вероятностью 50% добавляем второе сообщение
   if (Math.random() > 0.5) {
-    comment.message += ' ' + getRandomElement(MESSAGES);
+    comment.message += ` ${getRandomElement(MESSAGES)}`;
   }
 
   return comment;
@@ -104,17 +104,14 @@ const createPhoto = function (id) {
 
 // Функция для генерации массива из 25 фотографий
 const createPhotos = function () {
-  const photos = [];
+  const photosArray = [];
 
   for (let i = 1; i <= 25; i++) {
-    photos.push(createPhoto(i));
+    photosArray.push(createPhoto(i));
   }
 
-  return photos;
+  return photosArray;
 };
 
 // Генерируем массив фотографий
 const photos = createPhotos();
-
-// Выводим в консоль для проверки
-console.log(photos);
